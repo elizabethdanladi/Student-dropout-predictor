@@ -92,14 +92,14 @@ st.write(
 with st.expander("ℹ️ What do the risk levels mean?"):
     st.markdown(
         """
-- 🟢 **Low risk** — this student shows no strong warning signs right now.
-- 🟠 **Medium risk** — some warning signs are present (e.g. falling attendance
+- 🟢 **Low risk** - this student shows no strong warning signs right now.
+- 🟠 **Medium risk** - some warning signs are present (e.g. falling attendance
   or grades). Worth keeping an eye on, or a light check-in.
-- 🔴 **High risk** — several strong warning signs are present together
+- 🔴 **High risk** - several strong warning signs are present together
   (e.g. low attendance *and* low income *and* poor grades). Recommend a
   direct conversation or support plan for this student.
 
-This is a **decision-support tool, not a final judgement** — it's meant to help
+This is a **decision-support tool, not a final judgement** - it's meant to help
 a human decide who to check in on first, not to label a student on its own.
         """
     )
@@ -113,7 +113,7 @@ PARENT_EDU = ["None","Primary","Secondary","Tertiary"]
 
 # ---------- Input form ----------
 with st.form("student_form"):
-    st.markdown("### 🔑 Key factors")
+    st.markdown("###  Key factors")
     st.caption(
         "These fields drive the vast majority of the prediction (~88% of the model's "
         "decision-making) — fill these in carefully."
@@ -211,34 +211,34 @@ if submitted:
             col.metric(f"{color_map[level]} {level}", f"{pct:.0f}%")
 
     # ---------- Contributing factors (rule-based flags + global importance) ----------
-    st.subheader("💡 Why this result?")
+    st.subheader(" Why this result?")
     st.caption("Here's what's driving this specific student's result, explained in plain terms.")
 
     # (icon, plain explanation) for each possible flag
     flag_explanations = []
     if attendance_rate < 70:
         flag_explanations.append((
-            "📉", f"**Misses school often** ({attendance_rate:.0f}% attendance) — "
+             "**Misses school often** ({attendance_rate:.0f}% attendance) — "
             "students who are frequently absent are far more likely to fall behind and eventually drop out."
         ))
     if overall_avg < 50:
         flag_explanations.append((
-            "📝", f"**Struggling academically** (average score {overall_avg:.0f}/100) — "
+             f"**Struggling academically** (average score {overall_avg:.0f}/100) — "
             "falling grades are often an early sign a student is losing motivation to continue."
         ))
     if income_band == "Low":
         flag_explanations.append((
-            "💰", "**Comes from a lower-income household** — financial pressure at home can "
+            "**Comes from a lower-income household** — financial pressure at home can "
             "force a student to prioritize work or family needs over school."
         ))
     if part_time_work == "Yes":
         flag_explanations.append((
-            "🧺", "**Works or trades alongside school** — balancing a job with schoolwork "
+             "**Works or trades alongside school** — balancing a job with schoolwork "
             "often eats into study time and attendance."
         ))
     if family_support == "No":
         flag_explanations.append((
-            "🏠", "**Limited support at home** — students without encouragement or help at "
+             "**Limited support at home** — students without encouragement or help at "
             "home are more likely to disengage from school."
         ))
     if distance_km > 5:
