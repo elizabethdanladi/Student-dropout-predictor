@@ -85,7 +85,7 @@ if model is None:
 
 st.write(
     "Fill in a student's details below. The tool will estimate how likely they "
-    "are to drop out of school, and explain **why** — so a teacher or school "
+    "are to drop out of school, and explain **why** - so a teacher or school "
     "admin can decide whether to step in early."
 )
 
