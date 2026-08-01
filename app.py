@@ -85,17 +85,17 @@ if model is None:
 
 st.write(
     "Fill in a student's details below. The tool will estimate how likely they "
-    "are to drop out of school, and explain **why** — so a teacher or school "
+    "are to drop out of school, and explain **why** - so a teacher or school "
     "admin can decide whether to step in early."
 )
 
 with st.expander("ℹ️ What do the risk levels mean?"):
     st.markdown(
         """
-- 🟢 **Low risk** — this student shows no strong warning signs right now.
-- 🟠 **Medium risk** — some warning signs are present (e.g. falling attendance
+- 🟢 **Low risk** - this student shows no strong warning signs right now.
+- 🟠 **Medium risk** - some warning signs are present (e.g. falling attendance
   or grades). Worth keeping an eye on, or a light check-in.
-- 🔴 **High risk** — several strong warning signs are present together
+- 🔴 **High risk** - several strong warning signs are present together
   (e.g. low attendance *and* low income *and* poor grades). Recommend a
   direct conversation or support plan for this student.
 
