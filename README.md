@@ -1,5 +1,5 @@
 # Student Dropout Risk Predictor (AI-08)
-**3MTT NextGen Capstone — Nigerian Secondary School Context**
+**3MTT NextGen Capstone - Nigerian Secondary School Context**
 
 **Name:** Elizabeth Danladi Sabatu
 **Fellow ID:** FE/26/1061824678
@@ -46,16 +46,16 @@ File: `nigerian_student_dropout_dataset.csv`
 
 ## Approach
 
-1. **EDA** — checked class balance and how attendance/scores vary by risk level.
+1. **EDA** - checked class balance and how attendance/scores vary by risk level.
 2. **Preprocessing** — one-hot encoding for categorical features, standard
    scaling for numeric features, via a single `ColumnTransformer`.
-3. **Feature leakage guard** — `risk_score_raw` (the raw score used to *generate*
+3. **Feature leakage guard** - `risk_score_raw` (the raw score used to *generate*
    the label) and `student_id` were dropped from training features.
 4. **Models trained:**
    - Logistic Regression (interpretable baseline)
-   - Random Forest (main model — better accuracy, gives feature importances)
-5. **Evaluation** — accuracy, per-class precision/recall/F1, confusion matrix.
-6. **Explainability** — global feature importances from the Random Forest,
+   - Random Forest (main model - better accuracy, gives feature importances)
+5. **Evaluation** - accuracy, per-class precision/recall/F1, confusion matrix.
+6. **Explainability** - global feature importances from the Random Forest,
    plus rule-based "contributing factor" flags per prediction (e.g., "Low
    attendance rate", "Engages in part-time work").
 
@@ -69,7 +69,7 @@ File: `nigerian_student_dropout_dataset.csv`
 Per-class performance (Random Forest) is strongest for Low risk (highest
 recall) and reasonable for Medium/High, with most misclassifications landing
 in the adjacent risk band (e.g., Medium predicted as Low) rather than jumping
-from Low straight to High — see the confusion matrix in the notebook.
+from Low straight to High - see the confusion matrix in the notebook.
 
 **Top contributing factors** (by feature importance): attendance rate,
 overall average score, household income band, and part-time work status.
