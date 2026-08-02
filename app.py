@@ -1,5 +1,5 @@
 """
-Student Dropout Risk Predictor - Streamlit Demo App (AI-08)
+Student Dropout Risk Predictor - Streamlit Demo App
 
 Run with:
     pip install streamlit joblib pandas scikit-learn
